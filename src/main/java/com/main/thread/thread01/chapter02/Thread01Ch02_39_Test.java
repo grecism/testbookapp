@@ -60,7 +60,7 @@ class Thread01Ch02_39_Thread extends Thread{
 	@Override
 	public void run() {
 		printMethod();
-	}*///可以停止
+	}*///2种情况都可以可以停止
 	
 	@Override
 	public void run() {
@@ -68,6 +68,6 @@ class Thread01Ch02_39_Thread extends Thread{
 		while(flag == true){
 		}
 		System.out.println("线程被停止了");
-	}//不能停止
+	}//1不能停止2可以停止
 	
 }

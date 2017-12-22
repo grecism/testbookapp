@@ -49,4 +49,7 @@ class Thread01Ch02_38_Object implements Runnable{
 	public void run() {
 		printMethod();
 	}
+	
+	
+	
 }
