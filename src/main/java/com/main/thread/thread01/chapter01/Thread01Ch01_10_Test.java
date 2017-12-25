@@ -1,5 +1,12 @@
 package com.main.thread.thread01.chapter01;
 
+/**
+ * 
+ *<p>Title	: Thread01Ch01_10_Test</p>
+ * @Description	:
+ * @author	: admin
+ * @date	: 2017年12月22日上午9:52:06
+ */
 public class Thread01Ch01_10_Test {
 	/**1.2.4 留意i--与system.out.println()的异常**/
 	//1.2.4 留意i--与system.out.println()的异常

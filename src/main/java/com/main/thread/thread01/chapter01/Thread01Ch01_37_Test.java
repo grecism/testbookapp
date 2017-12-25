@@ -1,4 +1,4 @@
- 	package com.main.thread.thread01.chapter01;
+package com.main.thread.thread01.chapter01;
 
 import java.util.Random;
 

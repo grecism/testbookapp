@@ -1,7 +1,6 @@
 package com.main.thread.thread01.chapter03;
 
 import java.io.IOException;
-import java.io.PipedOutputStream;
 import java.io.PipedReader;
 import java.io.PipedWriter;
 
