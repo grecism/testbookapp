@@ -19,7 +19,7 @@ public class Thread01Ch04_18_Test {
 	//使用awaitUninterruptibly()方法线程被中断后可以正常运行。
 	public static void main(String[] args) {
 		try {
-			Thread01Ch04_18_Service service = new Thread01Ch04_18_Service();
+			final Thread01Ch04_18_Service service = new Thread01Ch04_18_Service();
 			Runnable runnable = new Runnable() {
 				
 				@Override

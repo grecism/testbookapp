@@ -16,7 +16,7 @@ public class Thread01Ch04_14_Test {
 	//-2方法 boolean isHeldByCurrentThread()的作用是查询当前线程是否保持此锁定。
 	//-3方法boolean isLocked()的作用是查询此锁定是否由任意线程保持。
 	public static void main(String[] args) {
-		Thread01Ch04_14_Service service = new Thread01Ch04_14_Service();
+		final Thread01Ch04_14_Service service = new Thread01Ch04_14_Service();
 		Runnable runnable = new Runnable() {
 			
 			@Override

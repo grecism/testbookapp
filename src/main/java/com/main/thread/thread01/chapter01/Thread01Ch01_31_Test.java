@@ -15,7 +15,7 @@ public class Thread01Ch01_31_Test {
 	//-1独占并锁死了printString方法。
 	public static void main(String[] args) {
 		try {
-			Thread01Ch01_31_SynchronizedObject object = new Thread01Ch01_31_SynchronizedObject();
+			final Thread01Ch01_31_SynchronizedObject object = new Thread01Ch01_31_SynchronizedObject();
 			Thread thread = new Thread(){
 				@Override
 				public void run() {

@@ -16,7 +16,7 @@ public class Thread01Ch04_11_Test {
 	//方法后返回值是4,说明有4个线程同时在等待lock的释放。
 	public static void main(String[] args) {
 		try {
-			Thread01Ch04_11_Service service = new Thread01Ch04_11_Service();
+			final Thread01Ch04_11_Service service = new Thread01Ch04_11_Service();
 			Runnable runnable = new Runnable() {
 				
 				@Override

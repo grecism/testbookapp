@@ -18,7 +18,7 @@ public class Thread01Ch04_15_Test {
 	//方法void lockInterruptibly()的作用是如果当线程未被中断,则获取锁定,如果已经被中断则出现异常。
 	public static void main(String[] args) {
 		try {
-			Thread01Ch04_15_Service service = new Thread01Ch04_15_Service();
+			final Thread01Ch04_15_Service service = new Thread01Ch04_15_Service();
 			Runnable runnable = new Runnable() {
 				
 				@Override

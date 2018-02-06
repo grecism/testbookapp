@@ -15,7 +15,7 @@ public class Thread01Ch04_16_Test {
 	//-2方法boolean tryLock()的作用是,仅在调用时锁定未被另一个线程保持的情况下,才获取该锁定。
 	public static void main(String[] args) {
 		try {
-			Thread01Ch04_16_Service service = new Thread01Ch04_16_Service();
+			final Thread01Ch04_16_Service service = new Thread01Ch04_16_Service();
 			Runnable runnable = new Runnable() {
 				
 				@Override

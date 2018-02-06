@@ -17,8 +17,8 @@ public class Thread01Ch02_34_Test {
 	//-1t2/B异步运行 t1/A,t3/C同步运行
 	//-1原因是static修饰了内部类,这时该内部类中所定义的所有方法和变量都默认是static的了,所以你加不加static都没问题。
 	public static void main(String[] args) {
-		InnerClass1 in1 = new InnerClass1();
-		InnerClass2 in2 = new InnerClass2();
+		final InnerClass1 in1 = new InnerClass1();
+		final InnerClass2 in2 = new InnerClass2();
 		Thread t1 = new Thread(new Runnable() {
 			
 			@Override

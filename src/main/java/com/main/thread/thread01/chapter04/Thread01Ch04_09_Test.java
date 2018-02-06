@@ -20,7 +20,7 @@ public class Thread01Ch04_09_Test {
 	//-2非公平锁的运行结果基本上是乱序的,说明先start()启动的线程不代表先获得锁。
 	public static void main(String[] args) {
 		//Thread01Ch04_09_Service service = new Thread01Ch04_09_Service(true);
-		Thread01Ch04_09_Service service = new Thread01Ch04_09_Service(false);
+		final Thread01Ch04_09_Service service = new Thread01Ch04_09_Service(false);
 		Runnable runnable = new Runnable() {
 			
 			@Override

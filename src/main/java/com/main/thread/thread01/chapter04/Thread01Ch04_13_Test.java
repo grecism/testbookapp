@@ -15,7 +15,7 @@ public class Thread01Ch04_13_Test {
 	//-1isFair()
 	//-1方法boolean isFair()的作用是判断是不是公平锁。默认情况下,ReentrantLock类使用的是非公平锁。
 	public static void main(String[] args) {
-		Thread01Ch04_13_Service service = new Thread01Ch04_13_Service(true);
+		final Thread01Ch04_13_Service service = new Thread01Ch04_13_Service(true);
 		Runnable runnable = new Runnable() {
 			
 			@Override
@@ -26,7 +26,7 @@ public class Thread01Ch04_13_Test {
 		Thread thread = new Thread(runnable);
 		thread.start();
 		
-		Thread01Ch04_13_Service service2 = new Thread01Ch04_13_Service(false);
+		final Thread01Ch04_13_Service service2 = new Thread01Ch04_13_Service(false);
 		runnable = new Runnable() {
 			
 			@Override

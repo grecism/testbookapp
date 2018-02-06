@@ -15,7 +15,7 @@ public class Thread01Ch01_34_Test {
 	//-1程序运行的结果出现值不同步的情况,在程序中使用suspend()方法要格外注意。
 	public static void main(String[] args) {
 		try {
-			Thread01Ch01_34_Object object = new Thread01Ch01_34_Object();
+			final Thread01Ch01_34_Object object = new Thread01Ch01_34_Object();
 			Thread thread = new Thread(){
 				@Override
 				public void run() {

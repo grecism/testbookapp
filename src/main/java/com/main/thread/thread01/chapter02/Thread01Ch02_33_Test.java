@@ -16,7 +16,7 @@ public class Thread01Ch02_33_Test {
 	//-1乱序打印
 	//-1由于持有不同的"对象监视器",打印结果是乱序的。
 	public static void main(String[] args) {
-		InnerClass inner = new InnerClass();
+		final InnerClass inner = new InnerClass();
 		Thread t1 = new Thread(new Runnable() {
 			
 			@Override

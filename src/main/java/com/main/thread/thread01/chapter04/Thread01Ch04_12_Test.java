@@ -17,7 +17,7 @@ public class Thread01Ch04_12_Test {
 	//执行了同一个condition对象的await(),则调用getWaitQueueLength(Condition condition)方法时返回的int值是5。
 	public static void main(String[] args) {
 		try {
-			Thread01Ch04_12_Service service = new Thread01Ch04_12_Service();
+			final Thread01Ch04_12_Service service = new Thread01Ch04_12_Service();
 			Runnable runnable = new Runnable() {
 				
 				@Override

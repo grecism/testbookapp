@@ -16,7 +16,7 @@ public class Thread01Ch04_17_Test {
 	//-3方法boolean tryLock(long timeout,TimeUnit unit)的作用是,如果锁定在给定等待时间内没有被另一个线程保持,且当前线程未被中断,则获取该锁定。
 	public static void main(String[] args) {
 		try {
-			Thread01Ch04_17_Service service = new Thread01Ch04_17_Service();
+			final Thread01Ch04_17_Service service = new Thread01Ch04_17_Service();
 			Runnable runnable = new Runnable() {
 				
 				@Override
