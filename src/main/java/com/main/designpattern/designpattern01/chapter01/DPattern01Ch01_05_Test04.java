@@ -2,7 +2,7 @@ package com.main.designpattern.designpattern01.chapter01;
 
 /**
  * 
- *<p>Title	:DPattern01Ch01_05_Test04.java
+ *<p>Title	: DPattern01Ch01_05_Test04.java</p>
  * @Description :
  * @author 	: admin
  * @date	: 2018年2月6日

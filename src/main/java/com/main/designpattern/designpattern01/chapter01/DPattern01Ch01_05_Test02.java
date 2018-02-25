@@ -9,7 +9,7 @@ import com.alibaba.fastjson.JSON;
 
 /**
  * 
- *<p>Title	:DPattern01Ch01_05_Test02.java
+ *<p>Title	: DPattern01Ch01_05_Test02.java</p>
  * @Description :
  * @author 	: admin
  * @date	: 2018年2月6日

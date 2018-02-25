@@ -4,7 +4,7 @@ import java.util.Random;
 
 /**
  * 
- *<p>Title	:DPattern01Ch01_05_Test03.java
+ *<p>Title	: DPattern01Ch01_05_Test03.java</p>
  * @Description :
  * @author 	: admin
  * @date	: 2018年2月6日
