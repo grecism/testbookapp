@@ -17,8 +17,6 @@ public class DPattern01Ch02_04_Test {
 	//我们通过下面的实例来演示组合模式的用法。实例演示了一个组织中员工的层次结构。
 	//优点： 1、高层模块调用简单。 2、节点自由增加。
 	//缺点：在使用组合模式时，其叶子和树枝的声明都是实现类，而不是接口，违反了依赖倒置原则。
-	//实现:
-	//我们有一个类 Employee，该类被当作组合模型类。CompositePatternDemo，我们的演示类使用 Employee 类来添加部门层次结构，并打印所有员工。
 	public static void main(String[] args) {
 		//2.使用Employee类来创建和打印员工的层次结构。
 		DPattern01Ch02_04_Employee ceo = new DPattern01Ch02_04_Employee("John","CEO", 30000);

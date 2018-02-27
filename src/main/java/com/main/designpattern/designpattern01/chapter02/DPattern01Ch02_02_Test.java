@@ -14,8 +14,6 @@ public class DPattern01Ch02_02_Test {
 	//我们通过下面的实例来演示桥接模式（Bridge Pattern）的用法。其中，可以使用相同的抽象类方法但是不同的桥接实现类，来画出不同颜色的圆。
 	//优点： 1、抽象和实现的分离。 2、优秀的扩展能力。 3、实现细节对客户透明。
 	//缺点：桥接模式的引入会增加系统的理解与设计难度，由于聚合关联关系建立在抽象层，要求开发者针对抽象进行设计与编程。
-	//实现:
-	//我们有一个作为桥接实现的 DrawAPI 接口和实现了 DrawAPI 接口的实体类 RedCircle、GreenCircle。Shape 是一个抽象类，将使用 DrawAPI 的对象。BridgePatternDemo，我们的演示类使用 Shape 类来画出不同颜色的圆。
 	public static void main(String[] args) {
 		//5.使用Shape和DrawAPI类画出不同颜色的矩形。
 		DPattern01Ch02_02_Rectangle rectangle = new DPattern01Ch02_02_Rectangle(200,100,new DPattern01Ch02_02_RedRectangle());
