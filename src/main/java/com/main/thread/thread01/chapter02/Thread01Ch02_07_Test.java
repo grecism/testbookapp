@@ -33,7 +33,7 @@ class Thread01Ch02_07_Object {
 	}
 	
 	synchronized public void method03(){
-		System.out.println("method02");
+		System.out.println("method03");
 	}
 }
 

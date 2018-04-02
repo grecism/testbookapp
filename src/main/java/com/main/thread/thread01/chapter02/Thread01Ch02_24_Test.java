@@ -44,8 +44,8 @@ class Thread01Ch02_24_Service {
 	}
 	
 	synchronized public void printC(){
-		System.out.println("threadname="+Thread.currentThread().getName()+"在"+System.currentTimeMillis()+"进入printB");
-		System.out.println("threadname="+Thread.currentThread().getName()+"在"+System.currentTimeMillis()+"离开printB");
+		System.out.println("threadname="+Thread.currentThread().getName()+"在"+System.currentTimeMillis()+"进入printC");
+		System.out.println("threadname="+Thread.currentThread().getName()+"在"+System.currentTimeMillis()+"离开printC");
 	}
 }
 

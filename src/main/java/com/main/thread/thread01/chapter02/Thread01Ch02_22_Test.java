@@ -12,8 +12,8 @@ public class Thread01Ch02_22_Test {
 	//验证(2)当其他线程执行x对象中synchronized同步方法时呈同步效果。
 	//验证(3)当其他线程执行x对象方法里面的synchronized(this)代码块时也呈同步效果。
 	//-3同步效果
-	//-4同步效果
 	//-3当其他线程执行x对象中synchronized同步方法时呈同步效果。
+	//-4同步效果
 	//-4当其他线程执行x对象方法里面的synchronized(this)代码块时也呈同步效果。
 	public static void main(String[] args) {
 		try {
@@ -35,7 +35,6 @@ public class Thread01Ch02_22_Test {
 class Thread01Ch02_22_Object {
 	/*synchronized public void printString(){
 		System.out.println("printString threadname="+Thread.currentThread().getName()+" getLock time="+System.currentTimeMillis());
-		System.out.println("==============================");
 		System.out.println("printString threadname="+Thread.currentThread().getName()+" releaseLock time="+System.currentTimeMillis());
 
 	}*/
@@ -43,7 +42,6 @@ class Thread01Ch02_22_Object {
     public void printString(){
     	synchronized (this) {
     		System.out.println("printString threadname="+Thread.currentThread().getName()+" getLock time="+System.currentTimeMillis());
-    		System.out.println("==============================");
     		System.out.println("printString threadname="+Thread.currentThread().getName()+" releaseLock time="+System.currentTimeMillis());
 		}
 

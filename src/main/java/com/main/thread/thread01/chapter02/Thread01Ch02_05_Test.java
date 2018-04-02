@@ -11,8 +11,8 @@ public class Thread01Ch02_05_Test {
 	//2.1.4 synchronized与锁对象
 	//其他的方法在被调用时会是什么效果?如何查看Lock锁对象的效果?
 	//-3线程B异步调用非同步方法
-	//-4同步运行 (在methodB()方法前面加上synchronized关键字)
 	//-3虽然线程A先持有了object对象的锁,但线程B完全可以异步调用非synchronized类型的方法。
+	//-4同步运行 (在methodB()方法前面加上synchronized关键字)
 	//-4同步运行 
 	//-3-4
 	//1)A线程先持有objcet对象的Lock锁,B线程可以以异步的方式调用object对象中的非synchronize类型的方法。
@@ -41,10 +41,10 @@ class Thread01Ch02_05_Object {
 	
 	/*public void methodB(){
 		try {
-			System.out.println("begin methodA threadName"+Thread.currentThread().getName()+
+			System.out.println("begin methodB threadName"+Thread.currentThread().getName()+
 					" begin time="+System.currentTimeMillis());
 			Thread.sleep(5000);
-			System.out.println("end"+" end time="+System.currentTimeMillis());
+			System.out.println("end time="+System.currentTimeMillis());
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
@@ -52,10 +52,10 @@ class Thread01Ch02_05_Object {
 	
 	synchronized public void methodB(){
 		try {
-			System.out.println("begin methodA threadName"+Thread.currentThread().getName()+
+			System.out.println("begin methodB threadName"+Thread.currentThread().getName()+
 					" begin time="+System.currentTimeMillis());
 			Thread.sleep(5000);
-			System.out.println("end"+" end time="+System.currentTimeMillis());
+			System.out.println("end time="+System.currentTimeMillis());
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}

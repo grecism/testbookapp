@@ -14,8 +14,8 @@ public class Thread01Ch02_20_Test {
 	//2.2.7 将任意对象作为对象监视器
 	//脏读的情况
 	//-5无序性带来的错误结果 list-2
-	//-6正确的运行结果 list=1
 	//-5"脏读"出现了。出现的原因是两个线程以异步的方式返回list参数的size()大小。解决办法就是"同步化"。
+	//-6正确的运行结果 list=1
 	//-6由于list参数对象在项目中是一份实例,是单例的,而且也正需要对list参数的getSize()方法做同步的调用,所以就对list参数做同步处理。
 	public static void main(String[] args) {
 		try {
@@ -39,10 +39,12 @@ class Thread01Ch02_20_Service {
 	private String string = new String();
     public Thread01Ch02_20_MyOneList method(Thread01Ch02_20_MyOneList list,String anyString,String data){
 		try {
-			/*if(list.getSize() < 1){
+			/*System.out.println("begin="+list.getSize());
+			if(list.getSize() < 1){
 				Thread.sleep(2000);//模拟从远程花费2秒取回数据
 				list.add(data);
-			}*/
+				System.out.println("end="+list.getSize());
+			}*///异步方式执行
 			
 			/*synchronized (string) {
 				System.out.println("begin="+list.getSize());

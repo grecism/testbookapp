@@ -8,9 +8,9 @@ package com.main.thread.thread01.chapter02;
  * @date	: 2017年12月8日下午4:03:35
  */
 public class Thread01Ch02_16_Test {
-	/**2.2.6 验证synchronized(this) 同步代码块时锁定当前对象的**/
+	/**2.2.6 验证synchronized(this) 同步代码块是锁定当前对象的**/
 	//和synchronized方法一样,synchronized(this)代码块也是锁定当前对象的。
-	//2.2.6 验证synchronized(this) 同步代码块时锁定当前对象的
+	//2.2.6 验证synchronized(this) 同步代码块是锁定当前对象的
 	//-1异步打印
 	//-2同步打印
 	//-1-2

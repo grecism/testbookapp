@@ -17,8 +17,8 @@ public class Thread01Ch02_21_Test {
 	//2.2.8 细化验证3个结论
 	//(1)验证当多个线程同时执行synchronized(x){}同步代码块时呈同步效果。
 	//-1同步调用
-	//-2异步调用
 	//-1同步的原因是使用了同一个"对象监视器"。
+	//-2异步调用
 	//-2异步调用的原因是使用了不同的"对象监视器"。
 	public static void main(String[] args) {
 		Thread01Ch02_21_Service service = new Thread01Ch02_21_Service();

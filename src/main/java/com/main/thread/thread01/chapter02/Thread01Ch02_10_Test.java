@@ -12,8 +12,8 @@ public class Thread01Ch02_10_Test {
 	//同步不可以继承
 	//2.1.8 同步不具有继承性
 	//-1子类产生非同步调用
-	//-2父类子类都可以同步调用  在子类的方法中添加synchronized关键字
 	//-1同步不能继承
+	//-2父类子类都可以同步调用  在子类的方法中添加synchronized关键字
 	//-2父类子类都可以同步调用
 	public static void main(String[] args) {
 		try {

@@ -46,13 +46,24 @@ class Thread01Ch02_13_Task {
 		try {
 			System.out.println("begin task");
 			Thread.sleep(3000);
-			String datavalue1 = "长时间处理任务返回的值data1 threadname="+Thread.currentThread().getName();
+			
+			//出现线程安全问题。
+			/*String datavalue1 = "长时间处理任务返回的值data1 threadname="+Thread.currentThread().getName();
 			String datavalue2 = "长时间处理任务返回的值data2 threadname="+Thread.currentThread().getName();
 			synchronized (this) {
 				System.out.println("线程名"+Thread.currentThread().getName());
 				data1 = datavalue1;
 				data2 = datavalue2;
+			}*/
+			
+			synchronized (this) {
+				System.out.println("线程名"+Thread.currentThread().getName());
+				String datavalue1 = "长时间处理任务返回的值data1 threadname="+Thread.currentThread().getName();
+				String datavalue2 = "长时间处理任务返回的值data2 threadname="+Thread.currentThread().getName();
+				data1 = datavalue1;
+				data2 = datavalue2;
 			}
+			
 			System.out.println("data1="+data1);
 			System.out.println("data2="+data2);
 			System.out.println("end task");
