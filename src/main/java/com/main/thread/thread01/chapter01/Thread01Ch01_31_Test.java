@@ -35,6 +35,7 @@ public class Thread01Ch01_31_Test {
 					object.printString();
 				}
 			};
+			thread2.start();
 			System.out.println("main end!");
 		} catch (InterruptedException e) {
 			e.printStackTrace();

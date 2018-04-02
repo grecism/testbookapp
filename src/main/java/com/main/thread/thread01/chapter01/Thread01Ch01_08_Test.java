@@ -30,8 +30,8 @@ class Thread01Ch01_08_LoginServlet{
 				Thread.sleep(5000);
 			}
 			passwordRef = password;
-			//System.out.println("username="+usernameRef+" password="+passwordRef);
-			System.out.println("username="+usernameRef+" password="+password);
+			System.out.println("usernameRef="+usernameRef+" passwordRef="+passwordRef);
+			//System.out.println("username="+username+" password="+password);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -44,7 +44,6 @@ class Thread01Ch01_08_LoginA extends Thread{
 	public void run() {
 		//super.run();
 		Thread01Ch01_08_LoginServlet.doPost("a", "aa");
-		//PracticeThread09_LoginServlet.doPost("a", "aa");
 	}
 }
 
@@ -53,6 +52,5 @@ class Thread01Ch01_08_LoginB extends Thread{
 	public void run() {
 		//super.run();
 		Thread01Ch01_08_LoginServlet.doPost("b", "bb");
-		//PracticeThread09_LoginServlet.doPost("b", "bb");
 	}
 }

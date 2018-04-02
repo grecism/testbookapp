@@ -31,10 +31,12 @@ class Thread01Ch01_23_Thread extends Thread{
 		try {
 			super.run();
 			System.out.println("run begin");
-			Thread.sleep(200000);
+			Thread.sleep(20000);
 			System.out.println("run end");
 		} catch (InterruptedException e) {
-			System.out.println("PracticeThread23 run exception 在沉睡中被停止");
+			System.out.println("thread run exception 在沉睡中被停止");
+			System.out.println("thread 是否停止1？"+this.isInterrupted());
+			System.out.println("thread 是否停止2？"+this.interrupted());
 			e.printStackTrace();
 		}
 	}

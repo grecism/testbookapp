@@ -19,9 +19,9 @@ public class Thread01Ch01_13_Test {
 	public static void main(String[] args) throws InterruptedException {
 		Thread01Ch01_13_Thread thread = new Thread01Ch01_13_Thread();
 		System.out.println("begin == "+thread.isAlive());
-		thread.start();
-		//Thread.sleep(1000);
-		System.out.println("end == "+thread.isAlive());
+		thread.start();   //-1
+		//Thread.sleep(1000); //-2
+		System.out.println("end == "+thread.isAlive());  
 	}
 }
 

@@ -37,15 +37,15 @@ class Thread01Ch01_17_Thread extends Thread{
 	@Override
 	public void run() {
 		super.run();
-		for (int i = 0; i < 500000; i++) {
+		for (int i = 0; i < 5000; i++) {
 			System.out.println("i="+(i+1));
 			if(i==10000){
-				//1
+				//-1
 				//是否停止1?true 是否停止2?false end!
 				//Thread.currentThread().interrupt();
 				//System.out.println("是否停止1?"+Thread.interrupted());
 				//System.out.println("是否停止2?"+Thread.interrupted());
-				//2
+				//-2
 				//是否停止1?true 是否停止2?false end!
 				this.interrupt();
 				System.out.println("是否停止1?"+Thread.interrupted());

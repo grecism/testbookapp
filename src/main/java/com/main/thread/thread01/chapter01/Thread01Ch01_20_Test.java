@@ -21,13 +21,15 @@ public class Thread01Ch01_20_Test {
 		try {
 			Thread01Ch01_20_Thread thread = new Thread01Ch01_20_Thread();
 			thread.start();
-			thread.sleep(1000);
+			thread.sleep(10);
+			//-1
 			//thread.interrupt();
 			//System.out.println("是否停止1?"+thread.isInterrupted());//true
 			//System.out.println("是否停止2?"+thread.isInterrupted());//true
 			//System.out.println("是否停止3?"+thread.interrupted());//false
 			//System.out.println("是否停止4?"+thread.interrupted());//false
 			
+			//-2
 			Thread.currentThread().interrupt();
 			System.out.println("是否停止1?"+thread.isInterrupted());//false
 			System.out.println("是否停止2?"+thread.isInterrupted());//false
@@ -45,7 +47,7 @@ class Thread01Ch01_20_Thread extends Thread{
 	@Override
 	public void run() {
 		super.run();
-		for (int i = 0; i < 500000; i++) {
+		for (int i = 0; i < 5000; i++) {
 			System.out.println("i="+(i+1));
 		}
 		

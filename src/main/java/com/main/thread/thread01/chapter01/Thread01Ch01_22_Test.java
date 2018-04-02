@@ -15,8 +15,8 @@ public class Thread01Ch01_22_Test {
 		try {
 			Thread01Ch01_22_Thread thread = new Thread01Ch01_22_Thread();
 			thread.start();
-			//thread.sleep(2000);
-			Thread.sleep(2000);
+			thread.sleep(2);
+			//Thread.sleep(2);
 			thread.interrupt();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -30,7 +30,7 @@ class Thread01Ch01_22_Thread extends Thread{
 	public void run() {
 		try {
 			super.run();
-			for (int i = 0; i < 500000; i++) {
+			for (int i = 0; i < 5000; i++) {
 				if(this.interrupted()){
 					System.out.println("已经是停止状态了!我要退出了！");
 					throw new InterruptedException();
@@ -39,7 +39,7 @@ class Thread01Ch01_22_Thread extends Thread{
 			}
 			System.out.println("for下面的代码。。。。。。");
 		} catch (InterruptedException e) {
-			System.out.println("PracticeThread22 run InterruptedException");
+			System.out.println("thread run InterruptedException");
 			e.printStackTrace();
 		}
 	}

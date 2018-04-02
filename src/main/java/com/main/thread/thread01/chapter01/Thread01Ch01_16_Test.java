@@ -17,7 +17,7 @@ public class Thread01Ch01_16_Test {
 		System.out.println("begin="+System.currentTimeMillis());
 		thread.start();
 		System.out.println("end="+System.currentTimeMillis());
-		System.out.println("当前线程名字="+Thread.currentThread().getName()+" 当前线程id="+Thread.currentThread().getId());		System.out.println("当前线程名字="+Thread.currentThread().getName()+" 当前线程id="+Thread.currentThread().getId());
+		System.out.println("当前线程名字="+Thread.currentThread().getName()+" 当前线程id="+Thread.currentThread().getId());		
 
 	}
 }

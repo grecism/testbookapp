@@ -17,7 +17,7 @@ public class Thread01Ch01_21_Test {
 		try {
 			Thread01Ch01_21_Thread thread = new Thread01Ch01_21_Thread();
 			thread.start();
-			thread.sleep(2000);
+			thread.sleep(2);
 			thread.interrupt();
 		} catch (InterruptedException e) {
 			e.printStackTrace();
@@ -30,7 +30,7 @@ class Thread01Ch01_21_Thread extends Thread{
 	@Override
 	public void run() {
 		super.run();
-		for (int i = 0; i <500000; i++) {
+		for (int i = 0; i <5000; i++) {
 			if(this.interrupted()){
 				System.out.println("已经是停止状态了!我要退出了！");
 				break;

@@ -30,10 +30,10 @@ class Thread01Ch01_24_Thread extends Thread{
 				System.out.println("i="+(i+1));
 			}
 			System.out.println("run begin");
-			Thread.sleep(200000);
-			/*for (int i = 100000; i < 200000; i++) {
+			//Thread.sleep(20000);
+			for (int i = 100000; i < 200000; i++) {
 				System.out.println("i="+(i+1));
-			}*/
+			}
 			System.out.println("run end");
 		} catch (Exception e) {
 			System.out.println("Thread01Ch01_24_Thread run exception 先停止,再遇到了sleep");

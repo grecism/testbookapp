@@ -26,7 +26,7 @@ class Thread01Ch01_27_Thread extends Thread{
 			super.run();
 			this.stop();
 		} catch (ThreadDeath e) {
-			System.out.println("PracticeThread27 run exception");
+			System.out.println("Thread01Ch01_27_Thread run exception");
 			e.printStackTrace();
 		}
 	}

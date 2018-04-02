@@ -30,8 +30,8 @@ class PracticeThread09_LoginServlet{
 				Thread.sleep(5000);
 			}
 			passwordRef = password;
-			//System.out.println("username="+usernameRef+" password="+passwordRef);
-			System.out.println("username="+usernameRef+" password="+password);
+			System.out.println("usernameRef="+usernameRef+" passwordRef="+passwordRef);
+			//System.out.println("username="+username+" password="+password);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -17,9 +17,9 @@ public class Thread01Ch01_25_Test {
 			Thread t = new Thread(thread);
 			t.start();
 			Thread.sleep(200);
-			System.out.println("Thread.currentThread.getName="+Thread.currentThread().getName());
+			//Thread.sleep(3000);
+			System.out.println("main threadName="+Thread.currentThread().getName());
 			t.interrupt();
-			//Thread.sleep(200000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
@@ -32,8 +32,8 @@ class Thread01Ch01_25_Thread implements Runnable{
 	public void run() {
 		try {
 			System.out.println("run begin");
-			System.out.println("Thread.currentThread.getName="+Thread.currentThread().getName());
-			Thread.sleep(200000);
+			System.out.println("thread threadName="+Thread.currentThread().getName());
+			Thread.sleep(200);
 			System.out.println("run end");
 		} catch (Exception e) {
 			System.out.println("Thread01Ch01_25_Thread run exception 在沉睡中被停止");

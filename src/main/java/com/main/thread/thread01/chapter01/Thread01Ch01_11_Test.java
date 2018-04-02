@@ -16,9 +16,9 @@ public class Thread01Ch01_11_Test {
 	//main 构造方法的打印:main run方法的打印:main
 	public static void main(String[] args) {
 		System.out.println(Thread.currentThread().getName());
-		Thread01Ch01_11_Thread practice11= new Thread01Ch01_11_Thread();
-		practice11.start();
-		//practice11.run();
+		Thread01Ch01_11_Thread thread= new Thread01Ch01_11_Thread();
+		thread.start(); //-1
+		//thread.run(); //-2
 	}
 }
 
