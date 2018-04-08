@@ -12,8 +12,8 @@ public class Thread01Ch02_29_Test {
 	//同步方法容易造成死循环。
 	//2.2.11 同步synchronized方法无限等待与解决
 	//-1运行结果是死循环。
-	//-2不在出现同步等待的情况。
 	//-1线程b永远得不到运行的机会,锁死了。
+	//-2不在出现同步等待的情况。
 	//-2使用同步块解决这样的问题。
 	public static void main(String[] args) {
 		try {

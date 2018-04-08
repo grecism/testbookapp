@@ -33,7 +33,7 @@ class Thread01Ch02_08_Parent {
 }
 
 class Thread01Ch02_08_Sub extends Thread01Ch02_08_Parent{
-	public void operateSubMethod(){
+	synchronized public void operateSubMethod(){
 		try {
 			while(i > 0){
 				i--;

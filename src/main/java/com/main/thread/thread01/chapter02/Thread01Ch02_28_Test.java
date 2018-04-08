@@ -11,9 +11,9 @@ public class Thread01Ch02_28_Test {
 	//2.2.10 数据类型String的常量池特性
 	//将synchronized(string)同步块与String联合使用时,要注意常量池以带来的一些例外。
 	//-2死循环
-	//-3交替打印
 	//-2出现这样的情况就是因为String的两个值都是AA,两个线程持有相同的锁,所以造成线程b不能执行。这就是String常量池所带来的问题。因此在大多数的情况下,同步
 	//synchronized代码块都不使用String作为锁对象,而改用其他,比如new Object()实例化一个Object对象,但它并不放入缓存中。
+	//-3交替打印
 	//-3交替打印的原因是持有的锁不是一个。
 	public static void main(String[] args) {
 		Thread01Ch02_28_Service service = new Thread01Ch02_28_Service();

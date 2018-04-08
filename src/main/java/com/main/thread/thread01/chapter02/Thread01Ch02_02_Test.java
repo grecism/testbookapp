@@ -13,8 +13,8 @@ public class Thread01Ch02_02_Test {
 	//出现交叉的情况。如果对象仅有一个实例变量,则有可能出现覆盖的情况。
 	//2.1.2 实例变量非线程安全
 	//-1单例模式中的实例变量呈非线程安全状态
-	//-2同步后线程安全了
 	//-1本实验是两个线程同时访问一个没有同步的方法,如果两个线程同时操作业务对象中的实例变量,则有可能出现"非线程安全"问题。
+	//-2同步后线程安全了
 	//-2线程安全的情况需要在方法前面加上synchronized,在两个线程访问同一个对象中的同步方法时一定是线程安全的。由于同步访问,先打印a,再打印b。
 	public static void main(String[] args) {
 		Thread01Ch02_02_PrivateData privateData = new Thread01Ch02_02_PrivateData();

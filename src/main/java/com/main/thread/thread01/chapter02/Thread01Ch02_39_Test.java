@@ -11,10 +11,10 @@ public class Thread01Ch02_39_Test {
 	/**2.3.3 解决异步死循环**/
 	//2.3.3 解决异步死循环
 	//-1出现死循环的效果
-	//-2不再出现死循环
 	//-1在启动Thread01Ch02_39_Thread线程时,变量private boolean flag = true;存在于公共堆栈及线程的私有堆栈中。在JVM被设置为-server模式时为
 	//了线程运行的效率,线程一直在私有堆栈中取得flag的值是true。而代码thread.setFlag(false);虽然被执行,更新的却是公共堆栈中的flag变量值false,所以
 	//一直就是死循环的状态。
+	//-2不再出现死循环
 	//-2通过使用volatile关键字,强制的从公共内存中读取变量的值。	
 	//这个问题其实就是私有堆栈中的值和公共堆栈中的值不同步造成的。解决这样的问题就要使用volitale关键字了,它主要的作用就是当线程访问flag这个变量时,强制性
 	//从公共堆栈中进行取值。
@@ -60,14 +60,20 @@ class Thread01Ch02_39_Thread extends Thread{
 	@Override
 	public void run() {
 		printMethod();
-	}*///2种情况都可以可以停止
+	}*/
 	
 	@Override
 	public void run() {
-		System.out.println("线程进入run了");
-		while(flag == true){
+		try {
+			System.out.println("线程进入run了");
+			while(flag == true){
+				System.out.println("threadname="+Thread.currentThread().getName());
+				Thread.sleep(1000);
+			}
+			System.out.println("线程被停止了");
+		} catch (InterruptedException e) {
+			e.printStackTrace();
 		}
-		System.out.println("线程被停止了");
-	}//1不能停止2可以停止
+	}
 	
 }

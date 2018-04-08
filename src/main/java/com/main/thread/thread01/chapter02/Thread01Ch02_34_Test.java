@@ -14,8 +14,9 @@ public class Thread01Ch02_34_Test {
 	/**2.2.15 内置类与同步2**/
 	//测试同步代码块synchronized(class2)对class2上锁后,其他线程只能以同步的方式调用class2中的静态同步方法。
 	//2.2.15 内置类与同步2
-	//-1t2/B异步运行 t1/A,t3/C同步运行
-	//-1原因是static修饰了内部类,这时该内部类中所定义的所有方法和变量都默认是static的了,所以你加不加static都没问题。
+	//-1t2/B异步运行 t1/A,t3/C同步运行,t4/D,t5/E同步运行。
+	//-1B与A/C与D/E异步运行。
+	//-?原因是static修饰了内部类,这时该内部类中所定义的所有方法和变量都默认是static的了,所以你加不加static都没问题。
 	public static void main(String[] args) {
 		final InnerClass1 in1 = new InnerClass1();
 		final InnerClass2 in2 = new InnerClass2();
@@ -43,9 +44,27 @@ public class Thread01Ch02_34_Test {
 			}
 		},"C");
 		
-		t1.start();
-		t2.start();
-		t3.start();
+		Thread t4 = new Thread(new Runnable() {
+			
+			@Override
+			public void run() {
+				in2.methodD();
+			}
+		},"D");
+		
+		Thread t5 = new Thread(new Runnable() {
+			
+			@Override
+			public void run() {
+				in2.methodE();
+			}
+		},"E");
+		
+		//t1.start();
+		//t2.start();
+		//t3.start();
+		t4.start();
+		t5.start();
 	}
 }
 
@@ -95,6 +114,36 @@ class Thread01Ch02_34_OutClass {
 				}
 			}
 			System.out.println(threadName+"离开了InnerClass2methodC()方法");
+		}
+		
+		synchronized static public void methodD(){
+			String threadName = Thread.currentThread().getName();
+			System.out.println(threadName+"进入了InnerClass2methodD()方法");
+			for (int i = 30; i < 40; i++) {
+				System.out.println("i="+i);
+				try {
+					Thread.sleep(100);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+			System.out.println(threadName+"离开了InnerClass2methodD()方法");
+		}
+		
+		 public void methodE(){
+			 synchronized (InnerClass2.class) {
+			 String threadName = Thread.currentThread().getName();
+				System.out.println(threadName+"进入了InnerClass2methodE()方法");
+				for (int i = 40; i < 50; i++) {
+					System.out.println("i="+i);
+					try {
+						Thread.sleep(100);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+				}
+				System.out.println(threadName+"离开了InnerClass2methodE()方法");	
+			}
 		}
 	}
 }

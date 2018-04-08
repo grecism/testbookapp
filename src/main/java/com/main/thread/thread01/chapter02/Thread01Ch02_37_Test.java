@@ -19,6 +19,7 @@ public class Thread01Ch02_37_Test {
 		object.printMethod();
 		System.out.println("我要停止它！ stopthreadname="+Thread.currentThread().getName());
 		object.setFlag(false);
+		
 	}
 }
 
@@ -33,7 +34,7 @@ class Thread01Ch02_37_Object{
 	public void printMethod(){
 		try {
 			while(flag == true){
-				System.out.println("threadname="+Thread.currentThread().getName());
+				System.out.println("threadname="+Thread.currentThread().getName()+",打印flag:"+flag);
 				Thread.sleep(1000);
 			}
 		} catch (InterruptedException e) {
