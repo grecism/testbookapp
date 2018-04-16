@@ -19,9 +19,10 @@ class Thread01Ch03_29_Test {
 		try {
 			Thread01Ch03_29_Thread t = new Thread01Ch03_29_Thread();
 			t.start();
-			t.join(2000);
+			//t.join(2000);
+			t.join(5000);
 			//Thread.sleep(2000);
-			System.out.println("end time"+System.currentTimeMillis());
+			System.out.println(Thread.currentThread().getName()+" end time"+System.currentTimeMillis());
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
@@ -30,11 +31,24 @@ class Thread01Ch03_29_Test {
 
 class Thread01Ch03_29_Thread extends Thread{
 	@Override
-	public void run() {
+	/*public void run() {
 		try {
 			super.run();
 			System.out.println("begin time="+System.currentTimeMillis());
 			Thread.sleep(5000);
+			System.out.println(Thread.currentThread().getName()+" end time"+System.currentTimeMillis());
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}*/
+
+	synchronized public void run() {
+		try {
+			super.run();
+			System.out.println("begin time="+System.currentTimeMillis());
+			//Thread.sleep(5000);
+			Thread.sleep(1000);
+			System.out.println(Thread.currentThread().getName()+" end time"+System.currentTimeMillis());
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}

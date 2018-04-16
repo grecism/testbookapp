@@ -17,10 +17,10 @@ public class Thread01Ch03_12_Test {
 	public static void main(String[] args) {
 		try {
 			Thread01Ch03_12_Runnable run = new Thread01Ch03_12_Runnable();
-			/*Thread a = new Thread(run.runnableA);
-			a.start();
-			Thread b = new Thread(run.runnableB);
-			b.start();*/
+//			Thread a = new Thread(run.runnableA);
+//			a.start();
+//			Thread b = new Thread(run.runnableB);
+//			b.start();
 			
 			Thread b = new Thread(run.runnableB);
 			b.start();

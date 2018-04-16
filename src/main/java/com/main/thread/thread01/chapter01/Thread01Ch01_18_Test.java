@@ -24,12 +24,14 @@ public class Thread01Ch01_18_Test {
 			thread.start();
 			thread.sleep(1000);
 			thread.interrupt();
-			System.out.println("是否停止1?"+thread.interrupted());
-			System.out.println("是否停止2?"+thread.interrupted());
-			
-			Thread.currentThread().interrupt(); 
-			System.out.println("是否停止1?"+Thread.interrupted());
-			System.out.println("是否停止2?"+Thread.interrupted());
+			//-1
+			System.out.println("是否停止1?"+thread.interrupted());//false
+			System.out.println("是否停止2?"+thread.interrupted());//false
+
+			//-2
+			Thread.currentThread().interrupt();
+			System.out.println("是否停止1?"+Thread.interrupted());//true
+			System.out.println("是否停止2?"+Thread.interrupted());//false
 			
 		} catch (InterruptedException e) {
 			e.printStackTrace();
@@ -42,7 +44,7 @@ class Thread01Ch01_18_Thread extends Thread{
 	@Override
 	public void run() {
 		super.run();
-		for (int i = 0; i < 5000; i++) {
+		for (int i = 0; i < 500; i++) {
 			System.out.println("i="+(i+1));
 		}
 		

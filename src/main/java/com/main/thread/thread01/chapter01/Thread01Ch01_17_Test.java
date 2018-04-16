@@ -17,16 +17,19 @@ public class Thread01Ch01_17_Test {
 	//1.7.1 停止不了的线程
 	//调用interrupt()仅仅是在当前线程中打了一个停止的标记,并不是真的停止线程。
 	//-1程序运行结果如下:
-	//是否停止1?true 是否停止2?false end!
+	//是否停止1?true 是否停止2?false
 	//-2程序运行结果如下:
-	//是否停止1?true 是否停止2?false end!
+	//是否停止1?true 是否停止2?false
+	//-3
+	//是否停止1?true 是否停止2?false
+	//-4
+	//是否停止1?true 是否停止2?false
 	public static void main(String[] args) {
 		try {
 			Thread01Ch01_17_Thread thread = new Thread01Ch01_17_Thread();
 			thread.start();
-			thread.sleep(2000);
 			thread.interrupt();
-		} catch (InterruptedException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
@@ -37,19 +40,27 @@ class Thread01Ch01_17_Thread extends Thread{
 	@Override
 	public void run() {
 		super.run();
-		for (int i = 0; i < 5000; i++) {
+		for (int i = 0; i < 500; i++) {
 			System.out.println("i="+(i+1));
-			if(i==10000){
+			if(i==100){
 				//-1
-				//是否停止1?true 是否停止2?false end!
-				//Thread.currentThread().interrupt();
-				//System.out.println("是否停止1?"+Thread.interrupted());
-				//System.out.println("是否停止2?"+Thread.interrupted());
+				//System.out.println("是否停止1?"+Thread.interrupted());//true
+				//System.out.println("是否停止2?"+Thread.interrupted());//false
 				//-2
-				//是否停止1?true 是否停止2?false end!
-				this.interrupt();
-				System.out.println("是否停止1?"+Thread.interrupted());
-				System.out.println("是否停止2?"+Thread.interrupted());
+				//System.out.println("是否停止1?"+Thread.currentThread().interrupted());//true
+				//System.out.println("是否停止2?"+Thread.currentThread().interrupted());//false
+				//-3
+				//Thread.currentThread().interrupt();
+				//this.interrupt();
+				//System.out.println("是否停止1?"+Thread.interrupted());//true
+				//System.out.println("是否停止2?"+Thread.interrupted());//false
+				//-4
+				Thread.currentThread().interrupt();
+				//this.interrupt();
+				System.out.println("是否停止1?"+Thread.currentThread().interrupted());//true
+				System.out.println("是否停止2?"+Thread.currentThread().interrupted());//false
+
+
 			}
 		}
 		

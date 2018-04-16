@@ -44,11 +44,16 @@ public class Thread01Ch03_06_Test {
 	//每个锁对象都有两个队列,一个是就绪队列,一个是阻塞队列。就绪队列存储了将要获得锁的线程,阻塞队列存储了被阻塞的线程。一个线程被唤醒后,才会进入就绪队列,等待CPU
 	//的调度;反之,一个线程被wait后,就会进入阻塞队列,等待下一次被唤醒。
 	public static void main(String[] args) {
-		Object lock = new Object();
-		Thread01Ch03_06_Thread_A  a = new Thread01Ch03_06_Thread_A(lock);
-		a.start();
-		Thread01Ch03_06_Thread_B b = new Thread01Ch03_06_Thread_B(lock);
-		b.start();
+		try {
+			Object lock = new Object();
+			Thread01Ch03_06_Thread_A  a = new Thread01Ch03_06_Thread_A(lock);
+			a.start();
+			Thread.sleep(3000);
+			Thread01Ch03_06_Thread_B b = new Thread01Ch03_06_Thread_B(lock);
+			b.start();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 }
 

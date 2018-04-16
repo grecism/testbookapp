@@ -42,7 +42,7 @@ class Thread01Ch03_30_Thread_A extends Thread{
 		}
 	}
 	
-	synchronized public void ThreadBMethod(){
+	synchronized public void threadBMethod(){
 		System.out.println("ThreadBMethod begin time="+System.currentTimeMillis());
 	}
 }
@@ -75,7 +75,7 @@ class Thread01Ch03_30_Thread_C extends Thread{
 	@Override
 	public void run() {
 		super.run();
-		a.ThreadBMethod();
+		a.threadBMethod();
 	}
 }
 

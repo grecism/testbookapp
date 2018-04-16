@@ -51,7 +51,7 @@ class Thread01Ch03_23_Thread_P implements Runnable{
 		try {
 			for (int i = 0; i < 10; i++) {
 				queue.put(Thread.currentThread().getName()+"_产出的产品"+i);
-				System.out.println(Thread.currentThread().getName()+":产出的产品"+i);
+				System.out.println(Thread.currentThread().getName()+":产出了["+Thread.currentThread().getName()+"_产出的产品"+i+"]");
 			}
 		} catch (InterruptedException e) {
 			e.printStackTrace();

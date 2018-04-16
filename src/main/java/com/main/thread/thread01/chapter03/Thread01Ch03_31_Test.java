@@ -56,7 +56,11 @@ class Thread01Ch03_31_Thread_B extends Thread{
 			synchronized (a) {
 				a.start();
 				a.join();//此时释放锁
-				for (int i = 0; i < Integer.MAX_VALUE; i++) {
+				/*for (int i = 0; i < Integer.MAX_VALUE; i++) {
+					double random = Math.random();
+					System.out.println("random:"+random);
+				}*/
+				for (int i = 0; i < 10; i++) {
 					double random = Math.random();
 					System.out.println("random:"+random);
 				}
