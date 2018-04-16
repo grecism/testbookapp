@@ -12,7 +12,7 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 public class Thread01Ch04_01_Test {
 	/**4 Lock的使用**/
-	//介绍使用Java5中lock对象也能实现同步的效果,而且在使用上更加方便。着重掌握如下2个只是点:
+	//介绍使用Java5中lock对象也能实现同步的效果,而且在使用上更加方便。着重掌握如下2个知识点:
 	//1.ReentrantLock类的使用。2.ReentrantReadWriteLock。
 	/**4.1 使用ReentrantLock类**/
 	//在java多线程中,可以使用synchronized关键字来实现线程之间同步互斥,但在JDK1.5中新增加了ReentrantLock类也能达到同样的效果,并且在扩展功能上也更加

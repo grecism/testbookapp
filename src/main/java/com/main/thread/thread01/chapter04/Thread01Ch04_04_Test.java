@@ -18,10 +18,15 @@ public class Thread01Ch04_04_Test {
 	//-1Object类中的wait()方法相当于Condition类中的await()方法。Object类中的wait(long timeout)方法相当于Condition类中的await(long time,TimeUnit unit)
 	//方法。Object类中的notify()方法相当于Condition类中的signal()方法。Object类中的notifyAll()方法相当于Condition类中的signalAll()方法。
 	public static void main(String[] args) {
-		Thread01Ch04_04_Service service = new Thread01Ch04_04_Service();
-		Thread01Ch04_04_Thread t = new Thread01Ch04_04_Thread(service);
-		t.start();
-		service.signal();
+		try {
+			Thread01Ch04_04_Service service = new Thread01Ch04_04_Service();
+			Thread01Ch04_04_Thread t = new Thread01Ch04_04_Thread(service);
+			t.start();
+			Thread.sleep(3000);
+			service.signal();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 }
 

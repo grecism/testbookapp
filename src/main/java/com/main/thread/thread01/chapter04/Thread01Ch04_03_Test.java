@@ -42,7 +42,6 @@ class Thread01Ch04_03_Service{
 			System.out.println("A begin");
 			c.await();
 			System.out.println("A end");
-			lock.unlock();
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}finally{
