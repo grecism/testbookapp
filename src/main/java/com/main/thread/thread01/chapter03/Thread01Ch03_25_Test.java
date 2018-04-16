@@ -59,7 +59,7 @@ class Thread01Ch03_25_ReadData{
 			int len;
 			while((len = reader.read(charArray)) != -1){
 				String readData = new String(charArray,0,len);
-				System.out.println(readData);
+				System.out.println("read begin:"+readData);
 			}
 			reader.close();
 		} catch (IOException e) {

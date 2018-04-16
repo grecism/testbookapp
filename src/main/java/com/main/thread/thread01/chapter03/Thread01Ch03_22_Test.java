@@ -15,8 +15,8 @@ public class Thread01Ch03_22_Test {
 	//性能较低
 	public static void main(String[] args) {
 		Thread01Ch03_22_Salesperson salesperson = new Thread01Ch03_22_Salesperson();
-		Thread01Ch03_22_P p = new Thread01Ch03_22_P(salesperson);
-		Thread01Ch03_22_C c = new Thread01Ch03_22_C(salesperson);
+		Thread01Ch03_22_Thread_P p = new Thread01Ch03_22_Thread_P(salesperson);
+		Thread01Ch03_22_Thread_C c = new Thread01Ch03_22_Thread_C(salesperson);
 		for (int i = 0; i < 10; i++) {
 			new Thread(p,"生产者"+i).start();
 			new Thread(c,"消费者"+i).start();
@@ -72,9 +72,9 @@ class Thread01Ch03_22_Salesperson{
 }
 
 //生产者
-class Thread01Ch03_22_P implements Runnable{
+class Thread01Ch03_22_Thread_P implements Runnable{
 	private Thread01Ch03_22_Salesperson salesperson;
-	public Thread01Ch03_22_P(Thread01Ch03_22_Salesperson salesperson) {
+	public Thread01Ch03_22_Thread_P(Thread01Ch03_22_Salesperson salesperson) {
 		this.salesperson = salesperson;
 	}
 	@Override
@@ -88,9 +88,9 @@ class Thread01Ch03_22_P implements Runnable{
 }
 
 //消费者
-class Thread01Ch03_22_C implements Runnable{
+class Thread01Ch03_22_Thread_C implements Runnable{
 	private Thread01Ch03_22_Salesperson salesperson;
-	public Thread01Ch03_22_C(Thread01Ch03_22_Salesperson salesperson) {
+	public Thread01Ch03_22_Thread_C(Thread01Ch03_22_Salesperson salesperson) {
 		this.salesperson = salesperson;
 	}
 	@Override

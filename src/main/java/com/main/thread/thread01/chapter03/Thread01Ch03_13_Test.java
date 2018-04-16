@@ -10,24 +10,24 @@ package com.main.thread.thread01.chapter03;
 public class Thread01Ch03_13_Test {
 	//3.1.9 通知过早
 	//-3仅仅执行了notify方法
-	//-4正常运行
 	//-3仅仅执行了notify方法
+	//-4正常运行
 	//-4正常运行
 	public static void main(String[] args) {
 		try {
 			Thread01Ch03_13_Runnable run = new Thread01Ch03_13_Runnable();
 			
-			/*Thread b = new Thread(run.runnableB);
+			Thread b = new Thread(run.runnableB);
 			b.start();
 			Thread.sleep(100);
 			Thread a = new Thread(run.runnableA);
-			a.start();*/
+			a.start();
 			
-			Thread a = new Thread(run.runnableA);
+			/*Thread a = new Thread(run.runnableA);
 			a.start();
 			Thread.sleep(100);
 			Thread b = new Thread(run.runnableB);
-			b.start();
+			b.start();*/
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}

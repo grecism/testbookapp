@@ -13,10 +13,10 @@ public class Thread01Ch03_10_Test {
 	//3.1.6 只通知一个线程
 	//3.1.7 唤醒所有线程
 	//-1仅有一个线程被唤醒
-	//-2全部被唤醒
-	//-3使用notifyAll()唤醒全部线程
 	//-1调用方法notify()一次只随机通知一个线程进行唤醒。
+	//-2全部被唤醒
 	//-2当多次调用notify()方法时,会随机将等待wait状态的线程进行唤醒。
+	//-3使用notifyAll()唤醒全部线程
 	//-3若notify()方法的调用次数小于线程对象的数量,会出现有部分线程对象无法被唤醒的情况。为了唤醒全部线程,可以使用notifyAll()方法。
 	public static void main(String[] args) {
 		try {

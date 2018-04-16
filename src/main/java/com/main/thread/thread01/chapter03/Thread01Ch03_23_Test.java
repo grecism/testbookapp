@@ -16,8 +16,8 @@ public class Thread01Ch03_23_Test {
 	public static void main(String[] args) {
 		// 声明一个容量为5的缓存队列
         BlockingQueue<String> queue = new LinkedBlockingQueue<String>(5);//最多存放5个产品
-		Thread01Ch03_23_P p = new Thread01Ch03_23_P(queue);
-		Thread01Ch03_23_C c = new Thread01Ch03_23_C(queue);
+        Thread01Ch03_23_Thread_P p = new Thread01Ch03_23_Thread_P(queue);
+		Thread01Ch03_23_Thread_C c = new Thread01Ch03_23_Thread_C(queue);
 		for (int i = 0; i < 10; i++) {
 			new Thread(p,"生产者"+i).start();
 			new Thread(c,"消费者"+i).start();
@@ -41,17 +41,17 @@ class Thread01Ch03_23_Product{
 }
 
 //生产者
-class Thread01Ch03_23_P implements Runnable{
+class Thread01Ch03_23_Thread_P implements Runnable{
 	private  BlockingQueue<String> queue;
-	public Thread01Ch03_23_P(BlockingQueue<String> queue) {
+	public Thread01Ch03_23_Thread_P(BlockingQueue<String> queue) {
 		this.queue = queue;
 	}
 	@Override
 	public void run() {
 		try {
 			for (int i = 0; i < 10; i++) {
-				queue.put(Thread.currentThread().getName()+":产品"+i);
-				System.out.println(Thread.currentThread().getName()+":产出了产品"+i);
+				queue.put(Thread.currentThread().getName()+"_产出的产品"+i);
+				System.out.println(Thread.currentThread().getName()+":产出的产品"+i);
 			}
 		} catch (InterruptedException e) {
 			e.printStackTrace();
@@ -61,16 +61,16 @@ class Thread01Ch03_23_P implements Runnable{
 }
 
 //消费者
-class Thread01Ch03_23_C implements Runnable{
+class Thread01Ch03_23_Thread_C implements Runnable{
 	private  BlockingQueue<String> queue;
-	public Thread01Ch03_23_C(BlockingQueue<String> queue) {
+	public Thread01Ch03_23_Thread_C(BlockingQueue<String> queue) {
 		this.queue = queue;
 	}
 	@Override
 	public void run() {
 		try {
 			for (int i = 0; i < 10; i++) {
-				System.out.println(Thread.currentThread().getName()+":消费"+queue.take());
+				System.out.println(Thread.currentThread().getName()+":消费了"+"["+queue.take()+"]");
 			}
 		} catch (InterruptedException e) {
 			e.printStackTrace();

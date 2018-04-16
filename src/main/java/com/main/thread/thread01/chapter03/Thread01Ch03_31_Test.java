@@ -58,6 +58,7 @@ class Thread01Ch03_31_Thread_B extends Thread{
 				a.join();//此时释放锁
 				for (int i = 0; i < Integer.MAX_VALUE; i++) {
 					double random = Math.random();
+					System.out.println("random:"+random);
 				}
 			}
 		} catch (InterruptedException e) {

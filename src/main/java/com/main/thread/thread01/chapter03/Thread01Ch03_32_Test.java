@@ -37,11 +37,13 @@ public class Thread01Ch03_32_Test {
 		try {
 			Thread01Ch03_32_Thread_A ta = new Thread01Ch03_32_Thread_A();
 			Thread01Ch03_32_Thread_B tb = new Thread01Ch03_32_Thread_B(ta);
+			
 			tb.start();
 			ta.start();
 			ta.join(2000);
 			System.out.println("main end time="+System.currentTimeMillis());
-			System.out.println();
+			System.out.println("main end !");
+			
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}

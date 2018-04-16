@@ -64,7 +64,7 @@ class Thread01Ch03_24_ReadData{
 			int len;
 			while((len = input.read(byteArray)) != -1){
 				String readData = new String(byteArray,0,len);
-				System.out.println(readData);
+				System.out.println("read begin:"+readData);
 			}
 			input.close();
 		} catch (IOException e) {

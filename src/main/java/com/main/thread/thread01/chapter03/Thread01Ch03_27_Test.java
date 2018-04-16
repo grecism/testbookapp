@@ -16,19 +16,18 @@ public class Thread01Ch03_27_Test {
 	//3.2.1 学习方法join前的铺垫
 	//3.2.2 用join方法来解决
 	//-1方法sleep()中的值不能确定。
+	//-1main主线程早于子线程结束。
 	//-2 主线程最后结束运行。
-	//-1方法sleep()中的值不能确定。
 	//-2 用join方法来解决。
 	public static void main(String[] args) {
 		try {
 			Thread01Ch03_27_Thread t = new Thread01Ch03_27_Thread();
 			t.start();
-			//Thread.sleep(millis);
 			//System.out.println("想要最后结束！");
 			//System.out.println("sleep中的值是多少不能确定");
 			t.join();
 			System.out.println("t线程运行完毕之后在执行此句!");
-		} catch (InterruptedException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}

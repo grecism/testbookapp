@@ -11,8 +11,8 @@ public class Thread01Ch03_07_Test {
 	/**3.1.4 方法wait()锁释放与notify()锁不释放**/
 	//3.1.4 方法wait()锁释放与notify()锁不释放
 	//-1当方法wait()被执行后,锁被自动释放
-	//-2wait改成sleep是同步效果
 	//-1方法wait()自动释放锁
+	//-2wait改成sleep是同步效果
 	//-2wait改成sleep是同步效果
 	public static void main(String[] args) {
 		Object lock = new Object();

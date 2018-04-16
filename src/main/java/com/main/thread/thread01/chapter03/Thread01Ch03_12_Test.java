@@ -11,8 +11,8 @@ public class Thread01Ch03_12_Test {
 	/**3.1.9 通知过早**/
 	//3.1.9 通知过早
 	//-1正常运行结果
-	//-2通知过早,方法wait永远不会被通知
 	//-1正常运行结果
+	//-2通知过早,方法wait永远不会被通知
 	//-2通知过早,则会打乱程序正常的运行逻辑。
 	public static void main(String[] args) {
 		try {

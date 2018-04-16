@@ -52,11 +52,11 @@ class Thread01Ch03_17_P{
 		try {
 			synchronized (lock) {
 				while(!"".equals(Thread01Ch03_17_Object.value)){
-					System.out.println(" 生产者"+Thread.currentThread().getName()+" waiting了###");
+					System.out.println(" [生产者]"+Thread.currentThread().getName()+" waiting了###");
 					lock.wait();
 				}
 				Thread.sleep(3000);
-				System.out.println(" 生产者"+Thread.currentThread().getName()+" runtime了");
+				System.out.println(" [生产者]"+Thread.currentThread().getName()+" runtime了");
 				String value=""+System.currentTimeMillis()+"_"+System.nanoTime();
 				Thread01Ch03_16_Object.value = value;
 				lock.notifyAll();
@@ -76,10 +76,10 @@ class Thread01Ch03_17_C{
 		try {
 			synchronized (lock) {
 				while("".equals(Thread01Ch03_17_Object.value)){
-					System.out.println(" 消费者"+Thread.currentThread().getName()+" waiting了$$$");
+					System.out.println(" [消费者]"+Thread.currentThread().getName()+" waiting了$$$");
 					lock.wait();
 				}
-				System.out.println(" 消费者"+Thread.currentThread().getName()+" runtime了");
+				System.out.println(" [消费者]"+Thread.currentThread().getName()+" runtime了");
 				Thread01Ch03_16_Object.value ="";
 				lock.notifyAll();
 			}

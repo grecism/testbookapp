@@ -11,8 +11,8 @@ public class Thread01Ch03_11_Test {
 	/**3.1.8 方法wait(long)的使用**/
 	//方法wait(long)的使用
 	//-15秒后自动被唤醒
-	//-25秒内由其他线程进行唤醒
 	//-15秒后自动被唤醒
+	//-25秒内由其他线程进行唤醒
 	//-25秒内由其他线程进行唤醒
 	public static void main(String[] args) {
 		try {

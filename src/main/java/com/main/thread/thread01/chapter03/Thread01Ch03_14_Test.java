@@ -47,9 +47,11 @@ class Thread01Ch03_14_Add{
 	
 	public void add(){
 		synchronized (lock) {
+			System.out.println("threadname="+Thread.currentThread().getName()+"add begin notify");
 			Thread01Ch03_14_Object.list.add("string");
-			//lock.notify();
-			lock.notifyAll();
+			//lock.notifyAll();
+			lock.notify();
+			System.out.println("threadname="+Thread.currentThread().getName()+"add end notify");
 		}
 	}
 }

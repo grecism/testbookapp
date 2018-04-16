@@ -59,6 +59,7 @@ class Thread01Ch03_30_Thread_B extends Thread{
 				a.start();
 				//Thread.sleep(3000); 
 				Thread.sleep(6000);//此时并不释放锁
+				System.out.println("ThreadB end");
 			}
 		} catch (InterruptedException e) {
 			e.printStackTrace();
