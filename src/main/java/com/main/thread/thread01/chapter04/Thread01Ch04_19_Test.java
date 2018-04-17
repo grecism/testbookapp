@@ -15,8 +15,8 @@ public class Thread01Ch04_19_Test {
 	/**4.1.15 方法awaitUntil()的使用**/
 	//4.1.15 方法awaitUntil()的使用
 	//-1 10秒后自动唤醒自己
-	//-2 2秒后被其他线程所唤醒
 	//-1 10秒后自动唤醒自己
+	//-2 2秒后被其他线程所唤醒
 	//-2说明线程在等待时间到达前,可以被其他线程提前唤醒。
 	public static void main(String[] args) {
 		try {

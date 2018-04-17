@@ -18,8 +18,14 @@ public class Thread01Ch04_09_Test {
 	//-1打印结果基本呈有序的状态,这就是公平锁的特点。
 	//-2非公平锁。false
 	//-2非公平锁的运行结果基本上是乱序的,说明先start()启动的线程不代表先获得锁。
+	//-1-2
+	//首先Java中的ReentrantLock 默认的lock（）方法采用的是非公平锁。
+	//公平锁（Fair）：加锁前检查是否有排队等待的线程，优先排队等待的线程，先来先得。
+	//非公平锁（Nonfair）：加锁时不考虑排队等待问题，直接尝试获取锁，获取不到自动到队尾等待。
+	//公平锁：某个对象的锁对所有线程都是公平的，先到先得。每次加锁前都会检查队列里面有没有排队等待的线程，没有才会尝试获取锁。
+	//非公平锁：当一个线程采用非公平锁这种方式获取锁时，该线程会首先去尝试获取锁而不是等待。如果没有获取成功，那么它才会去队列里面等待。
 	public static void main(String[] args) {
-		//Thread01Ch04_09_Service service = new Thread01Ch04_09_Service(true);
+		//final Thread01Ch04_09_Service service = new Thread01Ch04_09_Service(true);
 		final Thread01Ch04_09_Service service = new Thread01Ch04_09_Service(false);
 		Runnable runnable = new Runnable() {
 			

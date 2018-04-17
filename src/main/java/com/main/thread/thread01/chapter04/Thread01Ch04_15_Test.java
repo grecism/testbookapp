@@ -33,7 +33,8 @@ public class Thread01Ch04_15_Test {
 			Thread tb = new Thread(runnable);
 			tb.setName("B");
 			tb.start();
-			tb.interrupt();
+			tb.interrupt(); //如果已经被中断则出现异常。
+			//tb.interrupt(); //如果当线程未被中断,则获取锁定。
 			System.out.println("main end");
 		} catch (InterruptedException e) {
 			e.printStackTrace();

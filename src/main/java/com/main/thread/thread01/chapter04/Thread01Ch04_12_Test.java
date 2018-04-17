@@ -54,8 +54,15 @@ class Thread01Ch04_12_Service{
 	}
 	
 	public void signal(){
-		lock.lock();
-		System.out.println("有"+lock.getWaitQueueLength(c)+"个线程被await了并且正在等待Conditon后执行signal");
+		try {
+			lock.lock();
+			//c.signal(); //添加9个 不添加10个
+			System.out.println("有"+lock.getWaitQueueLength(c)+"个线程被await了并且正在等待Conditon后执行signal");
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			lock.unlock();
+		}
 	}
 }
 

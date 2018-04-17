@@ -12,7 +12,7 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 public class Thread01Ch04_17_Test {
 	//4.1.3 方法lockInterruptibly(),tryLock()和tryLock(long timeout,TimeUnit unit)的测试
-	//-3ttryLock(long timeout,TimeUnit unit) 线程B超时未获得锁
+	//-3tryLock(long timeout,TimeUnit unit) 线程B超时未获得锁
 	//-3方法boolean tryLock(long timeout,TimeUnit unit)的作用是,如果锁定在给定等待时间内没有被另一个线程保持,且当前线程未被中断,则获取该锁定。
 	public static void main(String[] args) {
 		try {

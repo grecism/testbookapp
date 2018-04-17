@@ -12,8 +12,8 @@ import java.util.concurrent.locks.ReentrantLock;
 public class Thread01Ch04_14_Test {
 	//4.1.12 方法isFair()、isHeldByCurrentThread()和isLocked()的测试
 	//-2isHeldByCurrentThread()
-	//-3isLocked()
 	//-2方法 boolean isHeldByCurrentThread()的作用是查询当前线程是否保持此锁定。
+	//-3isLocked()
 	//-3方法boolean isLocked()的作用是查询此锁定是否由任意线程保持。
 	public static void main(String[] args) {
 		final Thread01Ch04_14_Service service = new Thread01Ch04_14_Service();
@@ -33,10 +33,10 @@ class Thread01Ch04_14_Service{
 	private ReentrantLock lock = new ReentrantLock();
 	public void method(){
 		try {
-			//System.out.println("当前线程是否保持此锁定:"+lock.isHeldByCurrentThread());
+			System.out.println("当前线程是否保持此锁定:"+lock.isHeldByCurrentThread());
 			System.out.println("此锁定是否由任意线程保持:"+lock.isLocked());
 			lock.lock();
-			//System.out.println("当前线程是否保持此锁定:"+lock.isHeldByCurrentThread());
+			System.out.println("当前线程是否保持此锁定:"+lock.isHeldByCurrentThread());
 			System.out.println("此锁定是否由任意线程保持:"+lock.isLocked());
 		} catch (Exception e) {
 			e.printStackTrace();

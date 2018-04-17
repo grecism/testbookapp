@@ -24,6 +24,7 @@ public class Thread01Ch04_13_Test {
 			}
 		};
 		Thread thread = new Thread(runnable);
+		thread.setName("A");
 		thread.start();
 		
 		final Thread01Ch04_13_Service service2 = new Thread01Ch04_13_Service(false);
@@ -35,6 +36,7 @@ public class Thread01Ch04_13_Test {
 			}
 		};
 		thread = new Thread(runnable);
+		thread.setName("B");
 		thread.start();
 	}
 }
@@ -45,8 +47,14 @@ class Thread01Ch04_13_Service{
 		lock = new ReentrantLock(flag);
 	}
 	public void mehtod(){
-		lock.lock();
-		System.out.println("是否是公平锁:"+lock.isFair());
+		try {
+			lock.lock();
+			System.out.println("threadname="+Thread.currentThread().getName()+"是否是公平锁:"+lock.isFair());
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			lock.unlock();
+		}
 	}
 }
 

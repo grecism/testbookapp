@@ -41,6 +41,7 @@ class Thread01Ch04_16_Service{
 	public void method(){
 		if(lock.tryLock()){
 			System.out.println("threadname="+Thread.currentThread().getName()+"获得锁");
+			//lock.unlock(); //添加 A/B 都打印获得锁
 		}else{
 			System.out.println("threadname="+Thread.currentThread().getName()+"没有获得锁");
 		}
