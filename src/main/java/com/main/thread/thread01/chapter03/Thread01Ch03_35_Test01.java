@@ -5,7 +5,7 @@ package com.main.thread.thread01.chapter03;
  * @version 2018/4/16
  * @since 2018/4/16
  */
-public class Thread01Ch03_35_01_Test {
+public class Thread01Ch03_35_Test01 {
     //3.3.2 验证线程变量的隔离性
     //-3线程的初始值都为0，线程的累加值都为45。
     //-3可以看到，各个线程的value值是相互独立的，本线程的累加操作不会影响到其他线程的值，真正达到了线程内部隔离的效果。
