@@ -46,8 +46,8 @@ public class Thread01Ch05_02_Test {
 			String taskBTime = "2017-12-21 17:35:00";
 			Date taskADate = sdf.parse(taskATime);
 			Date taskBDate = sdf.parse(taskBTime);
-			System.out.println("指定的taskADate="+taskADate.toLocaleString()+"当前时间:"+new Date());
-			System.out.println("指定的taskBDate="+taskBDate.toLocaleString()+"当前时间:"+new Date());
+			System.out.println("指定的taskADate="+taskADate.toLocaleString()+"当前时间:"+new Date().toLocaleString());
+			System.out.println("指定的taskBDate="+taskBDate.toLocaleString()+"当前时间:"+new Date().toLocaleString());
 			timer.schedule(taskA, taskADate);
 			timer.schedule(taskB, taskBDate);
 		} catch (ParseException e) {

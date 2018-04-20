@@ -27,7 +27,7 @@ public class Thread01Ch05_04_Test {
 
 		@Override
 		public void run() {
-			System.out.println("运行了 taskA begin time="+new Date());
+			System.out.println("运行了 taskA begin time="+new Date().toLocaleString());
 		}
 		
 	}
@@ -35,10 +35,10 @@ public class Thread01Ch05_04_Test {
 		try {
 			Thread01Ch05_04_Task task = new Thread01Ch05_04_Task();
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-			//String taskATime = "2017-12-21 17:56:00";
+			//String taskTime = "2017-12-21 17:56:00";
 			String taskTime = "2017-12-21 17:50:00";
 			Date taskDate = sdf.parse(taskTime);
-			System.out.println("指定的taskDate="+taskDate.toLocaleString()+"当前时间:"+new Date());
+			System.out.println("指定的taskDate="+taskDate.toLocaleString()+"当前时间:"+new Date().toLocaleString());
 			Timer timer = new Timer();
 			timer.schedule(task, taskDate,4000);
 		} catch (ParseException e) {

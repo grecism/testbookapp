@@ -24,6 +24,7 @@ public class Thread01Ch05_15_Test {
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 			String taskTime = "2017-12-22 14:15:00";
 			Date taskDate = sdf.parse(taskTime);
+			System.out.println("指定的taskDate="+taskDate.toLocaleString()+" 当前时间为:"+new Date().toLocaleString());
 			Timer timer = new Timer();
 			timer.schedule(task,taskDate,5000);
 		} catch (ParseException e) {
@@ -36,8 +37,8 @@ class Thread01Ch05_15_Task extends TimerTask{
 
 	@Override
 	public void run() {
-		System.out.println("Task begin time="+new Date());
-		System.out.println("Task end time="+new Date());
+		System.out.println("Task begin time="+new Date().toLocaleString());
+		System.out.println("Task end time="+new Date().toLocaleString());
 	}
 	
 }

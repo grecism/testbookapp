@@ -26,11 +26,11 @@ public class Thread01Ch05_14_Test {
 		@Override
 		public void run() {
 			try {
-				System.out.println("Task begin time:"+new Date());
+				System.out.println("Task begin time:"+new Date().toLocaleString());
 				Thread.sleep(5000);
-				System.out.println("Task end time:"+new Date());
+				System.out.println("Task end time:"+new Date().toLocaleString());
 				count++;
-				if(count == 5){
+				if(count == 6){
 					timer.cancel();
 				}
 			} catch (InterruptedException e) {
@@ -46,7 +46,7 @@ public class Thread01Ch05_14_Test {
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 			String taskTime = "2017-12-22 14:08:00";
 			Date taskDate = sdf.parse(taskTime);
-			System.out.println("指定的taskDate="+taskDate+" 当前时间为:"+new Date());
+			System.out.println("指定的taskDate="+taskDate.toLocaleString()+" 当前时间为:"+new Date().toLocaleString());
 			timer.scheduleAtFixedRate(task,taskDate,2000);
 		} catch (ParseException e) {
 			e.printStackTrace();

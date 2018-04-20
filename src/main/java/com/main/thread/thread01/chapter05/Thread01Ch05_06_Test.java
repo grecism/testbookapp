@@ -26,7 +26,7 @@ public class Thread01Ch05_06_Test {
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 			String taskATime = "2017-12-21 18:17:00";
 			Date taskADate = sdf.parse(taskATime);
-			System.out.println("指定的taskADate="+taskADate+"当前时间:"+new Date());
+			System.out.println("指定的taskADate="+taskADate.toLocaleString()+"当前时间:"+new Date().toLocaleString());
 			Timer timer = new Timer();
 			timer.schedule(taskA, taskADate,4000);
 			timer.schedule(taskB, taskADate,4000);
@@ -40,7 +40,7 @@ class Thread01Ch05_06_Task_A extends TimerTask{
 
 	@Override
 	public void run() {
-		System.out.println("运行了 taskA begin time="+new Date());
+		System.out.println("运行了 taskA begin time="+new Date().toLocaleString());
 		this.cancel();
 	}
 	
@@ -50,7 +50,7 @@ class Thread01Ch05_06_Task_B extends TimerTask{
 
 	@Override
 	public void run() {
-		System.out.println("运行了 taskB begin time="+new Date());
+		System.out.println("运行了 taskB begin time="+new Date().toLocaleString());
 	}
 	
 }

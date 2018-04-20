@@ -25,9 +25,9 @@ public class Thread01Ch05_03_Test {
 		@Override
 		public void run() {
 			try {
-				System.out.println("taskA begin time="+new Date());
+				System.out.println("taskA begin time="+new Date().toLocaleString());
 				Thread.sleep(10000);
-				System.out.println("taskA end time="+new Date());
+				System.out.println("taskA end time="+new Date().toLocaleString());
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
@@ -38,9 +38,9 @@ public class Thread01Ch05_03_Test {
 
 		@Override
 		public void run() {
-			System.out.println("taskB begin time="+new Date());
-			System.out.println("运行了taskB time="+new Date());
-			System.out.println("taskB end time="+new Date());
+			System.out.println("taskB begin time="+new Date().toLocaleString());
+			System.out.println("运行了taskB time="+new Date().toLocaleString());
+			System.out.println("taskB end time="+new Date().toLocaleString());
 		}
 		
 	}
@@ -49,12 +49,12 @@ public class Thread01Ch05_03_Test {
 			Thread01Ch05_03_Task_A taskA = new Thread01Ch05_03_Task_A();
 			Thread01Ch05_03_Task_B taskB = new Thread01Ch05_03_Task_B();
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-			String taskATime = "2017-12-21 17:41:00";
-			String taskBTime = "2017-12-21 17:41:05";
+			String taskATime = "2018-4-20 11:06:00";
+			String taskBTime = "2018-4-20 11:06:00";
 			Date taskADate = sdf.parse(taskATime);
 			Date taskBDate = sdf.parse(taskBTime);
-			System.out.println("指定的taskADate="+taskADate.toLocaleString()+"当前时间:"+new Date());
-			System.out.println("指定的taskBDate="+taskBDate.toLocaleString()+"当前时间:"+new Date());
+			System.out.println("指定的taskADate="+taskADate.toLocaleString()+"当前时间:"+new Date().toLocaleString());
+			System.out.println("指定的taskBDate="+taskBDate.toLocaleString()+"当前时间:"+new Date().toLocaleString());
 			timer.schedule(taskA, taskADate);
 			timer.schedule(taskB, taskBDate);
 		} catch (ParseException e) {

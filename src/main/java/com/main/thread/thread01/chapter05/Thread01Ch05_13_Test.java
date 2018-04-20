@@ -17,7 +17,7 @@ public class Thread01Ch05_13_Test {
 	//5.1.5 scheduleAtFixedRate(TimerTask task,Date firstTime,long period)
 	//3.测试scheduleAtFixedRate方法任务不延时
 	//-1使用scheduleAtFixedRate方法,如果执行任务的时间没有被延时,那么下一次任务的执行时间参考的是上一次任务的"结束"时的时间来计算。
-	//-1控制台打印结果说明,如果执行任务的时间没有被延时,则下一次执行任务的时间是上一次任务的开始时间加上delay的时间。
+	//-1控制台打印结果说明,如果执行任务的时间没有被延时,则下一次执行任务的时间是上一次任务的开始时间加上delay(Task的执行时间)的时间。
 	
 	private static Timer timer = new Timer();
 	private static int count = 0 ;
@@ -26,9 +26,10 @@ public class Thread01Ch05_13_Test {
 		@Override
 		public void run() {
 			try {
-				System.out.println("Task begin time:"+new Date());
-				Thread.sleep(2000);
-				System.out.println("Task end time:"+new Date());
+				System.out.println("Task begin time:"+new Date().toLocaleString());
+				//Thread.sleep(2000);
+				Thread.sleep(4000);
+				System.out.println("Task end time:"+new Date().toLocaleString());
 				count++;
 				if(count == 5){
 					timer.cancel();
@@ -46,8 +47,9 @@ public class Thread01Ch05_13_Test {
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 			String taskTime = "2017-12-22 14:25:00";
 			Date taskDate = sdf.parse(taskTime);
-			System.out.println("指定的taskDate="+taskDate+" 当前时间为:"+new Date());
-			timer.scheduleAtFixedRate(task,taskDate,3000);
+			System.out.println("指定的taskDate="+taskDate.toLocaleString()+" 当前时间为:"+new Date().toLocaleString());
+			//timer.scheduleAtFixedRate(task,taskDate,3000);
+			timer.scheduleAtFixedRate(task,taskDate,5000);
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
