@@ -21,7 +21,6 @@ public class Thread01Ch06_07_Test {
 	}
 }
 
-
 class Thread01Ch06_07_Thread extends Thread{
 	@Override
 	public void run() {
@@ -31,7 +30,20 @@ class Thread01Ch06_07_Thread extends Thread{
 	}
 }
 
+enum EnumA {
+	INSTANCE;
+	private EnumAResource instance;
+	EnumA() {
+		System.out.println("调用了EnumA 的构造方法!");
+		instance = new EnumAResource();
+	}
+	public EnumAResource getInstance() {
+		return instance;
+	}
+}
 
+class EnumAResource{
+}
 
 
 
