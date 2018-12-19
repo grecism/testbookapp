@@ -3,9 +3,9 @@ package com.main.designpattern.designpattern01.chapter03;
 import java.util.Date;
 
 /**
- * @author lulu.zou
- * @version 2018/12/10
- * @since 2018/12/10
+ * @author admin
+ * @version 2018/12/11
+ * @since 2018/12/11
  */
 public class DPattern01Ch03_05_Test {
     /**3.5中介者模式**/

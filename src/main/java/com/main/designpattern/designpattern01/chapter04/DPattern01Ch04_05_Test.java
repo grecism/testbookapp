@@ -1,7 +1,7 @@
 package com.main.designpattern.designpattern01.chapter04;
 
 /**
- * @author lulu.zou
+ * @author admin
  * @version 2018/12/17
  * @since 2018/12/17
  */

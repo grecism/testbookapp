@@ -1,9 +1,9 @@
 package com.main.designpattern.designpattern01.chapter03;
 
 /**
- * @author lulu.zou
- * @version 2018/12/10
- * @since 2018/12/10
+ * @author admin
+ * @version 2018/12/11
+ * @since 2018/12/11
  */
 public class DPattern01Ch03_04_Test {
     /**3.4迭代器模式**/

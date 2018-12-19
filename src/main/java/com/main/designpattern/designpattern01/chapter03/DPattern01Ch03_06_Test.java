@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author lulu.zou
- * @version 2018/12/10
- * @since 2018/12/10
+ * @author admin
+ * @version 2018/12/11
+ * @since 2018/12/11
  */
 public class DPattern01Ch03_06_Test {
     /**3.6备忘录模式**/
